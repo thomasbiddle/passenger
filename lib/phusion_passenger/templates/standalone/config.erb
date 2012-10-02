@@ -36,6 +36,8 @@ events {
 }
 
 http {
+    underscores_in_headers on;
+
     log_format debug '[$time_local] $msec  "$request" $status conn=$connection sent=$bytes_sent body_sent=$body_bytes_sent';
     include '<%= PhusionPassenger::RESOURCES_DIR %>/mime.types';
     passenger_ruby <%= PlatformInfo.ruby_command %>;
